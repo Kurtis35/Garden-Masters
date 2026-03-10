@@ -1,0 +1,309 @@
+Gardenmasters Landscaping S.A
+
+You are an elite UI/UX designer, React developer, and SEO expert tasked with creating a premium landscaping business website.
+
+The website must be 100% FRONTEND ONLY.
+
+No backend.
+No databases.
+No APIs.
+No form submissions to servers.
+
+All contact actions must use:
+
+WhatsApp links
+
+tel: phone links
+
+mailto email links
+
+This ensures the site can deploy instantly on Netlify, GitHub Pages, or Cloudflare Pages.
+
+Tech Stack
+
+Build using:
+
+React
+
+Typescript
+
+Tailwind CSS
+
+shadcn/ui
+
+Framer Motion
+
+Lucide React Icons
+
+If the project is not configured, provide setup instructions:
+
+npx shadcn-ui@latest init
+npm install framer-motion lucide-react
+
+Project structure must include:
+
+/components/ui
+/pages
+/lib
+Hero Section Component
+
+Use this component structure:
+
+/components/ui/aurora-hero-bg-1.tsx
+
+Install dependency:
+
+npm install framer-motion
+
+Hero text should be:
+
+Title:
+
+Premium Landscaping in Cape Town
+
+Description:
+
+Transform your garden into a beautiful outdoor space with professional landscaping, lawn care and garden maintenance.
+
+Primary Button:
+
+Get Free Quote
+
+Primary Action:
+
+https://wa.me/27658415382
+
+Secondary Button:
+
+View Our Work
+
+Website Sections
+
+Create a complete professional landscaping website.
+
+1 Navigation Bar
+
+Sticky navbar.
+
+Logo text:
+
+Gardenmasters Landscaping S.A
+
+Menu links:
+
+Home
+Services
+Gallery
+Reviews
+About
+Contact
+
+CTA Button:
+
+Call Now
+
+Link:
+
+tel:+27658415382
+2 Services Section
+
+Create animated cards with icons.
+
+Services:
+
+🌿 Landscaping Design
+🌱 Lawn Maintenance
+🌳 Tree Trimming
+💧 Irrigation Systems
+🧹 Garden Cleanups
+🏡 Residential Garden Care
+
+Each card must include:
+
+Icon (lucide-react)
+Title
+Short description
+Hover animation
+
+3 Gallery Section
+
+Create a modern masonry image gallery using Unsplash landscaping images.
+
+Search terms:
+
+luxury backyard landscaping
+professional gardener working
+beautiful green garden
+landscape design backyard
+garden transformation
+
+Add hover zoom animation with framer motion.
+
+4 Why Choose Us
+
+Create a trust section with icons.
+
+Points:
+
+⭐ 5 Star Rated Service
+🕒 Open 24 Hours
+🌿 Professional Landscaping Experts
+📍 Serving Cape Town & Surrounding Areas
+💰 Affordable Pricing
+
+5 Customer Reviews
+
+Styled like Google reviews.
+
+Example:
+
+★★★★★
+"Fantastic work. My garden has never looked this good."
+— Sarah M.
+
+★★★★★
+"Reliable and professional landscaping service."
+— David P.
+
+★★★★★
+"Highly recommended. Great results."
+— Michelle K.
+
+6 About Section
+
+Text:
+
+Gardenmasters Landscaping S.A is a trusted landscaping company in Cape Town specializing in garden design, lawn care, and outdoor transformations.
+
+We help homeowners create beautiful outdoor spaces they can enjoy year-round.
+
+7 Contact Section
+
+Display:
+
+Phone
+WhatsApp
+Address
+
+Address:
+
+Mountain View Heights
+91 Serenade St
+Northpine, Cape Town 7505
+
+Phone:
+
+065 841 5382
+
+Buttons:
+
+Call Now
+
+tel:+27658415382
+
+WhatsApp Us
+
+https://wa.me/27658415382
+8 Google Maps Embed
+
+Embed a Google Maps iframe showing:
+
+91 Serenade St, Northpine, Cape Town
+
+9 Floating WhatsApp Button
+
+Add floating WhatsApp button bottom right.
+
+Link:
+
+https://wa.me/27658415382
+10 Footer
+
+Include:
+
+Business Name
+Phone
+Address
+
+Quick Links:
+
+Services
+Gallery
+Contact
+
+SEO Optimization
+
+Add meta tags:
+
+Title:
+
+Gardenmasters Landscaping Cape Town | Garden Services Northpine
+
+Description:
+
+Professional landscaping services in Cape Town including lawn care, garden maintenance, irrigation installation and garden design.
+
+Add structured Local Business schema.
+
+Visual Design
+
+The website must look:
+
+Premium
+Clean
+Modern
+Nature themed
+Highly animated
+
+Color palette:
+
+Forest Green
+Deep Green
+Light Sand
+White
+
+Animations
+
+Use Framer Motion for:
+
+Section fade-in
+Card hover lift
+Gallery zoom
+Smooth scroll transitions
+
+Mobile Optimization
+
+Site must be:
+
+Mobile-first
+Fully responsive
+Fast loading
+Large tap targets
+
+Conversion Optimization
+
+Website should encourage users to:
+
+Call
+WhatsApp
+Request quote
+
+CTA buttons:
+
+Call Now
+Get Free Quote
+WhatsApp Us
+
+Assets
+
+Use real Unsplash landscaping images.
+
+Deliverables
+
+Return:
+
+Complete React page
+All components
+Tailwind styling
+File structure
+Ready for deployment
