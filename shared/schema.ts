@@ -1,18 +1,13 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
-});
+// This is a 100% frontend-only website.
+// No database tables are required.
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+// We export a basic schema for structure if any forms are added later,
+// though currently all actions use native mailto/tel/wa links.
+export const contactFormSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(10)
 });
-
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type ContactForm = z.infer<typeof contactFormSchema>;
