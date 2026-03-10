@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Leaf } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,15 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Reviews", href: location === "/" ? "#reviews" : "/#reviews" },
+    { name: "About", href: location === "/" ? "#about" : "/#about" },
+    { name: "Contact", href: location === "/" ? "#contact" : "/#contact" },
   ];
+
+  const isActive = (href: string) => location === href;
 
   return (
     <header
@@ -34,7 +38,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <div className="bg-primary p-2 rounded-xl text-primary-foreground group-hover:bg-accent transition-colors">
               <Leaf className="w-6 h-6" />
             </div>
@@ -44,13 +48,17 @@ export function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled ? "text-foreground/80" : "text-white/90 hover:text-white"
+                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                  isActive(link.href) && link.href !== "#reviews" && link.href !== "#about" && link.href !== "#contact"
+                    ? `${isScrolled ? "bg-primary/10 text-primary" : "bg-white/20 text-white"}`
+                    : isScrolled 
+                      ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.name}
@@ -58,7 +66,7 @@ export function Navbar() {
             ))}
             <a
               href="tel:+27658415382"
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 ml-4 ${
                 isScrolled
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
                   : "bg-white text-primary hover:bg-white/90"
@@ -99,7 +107,11 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-base font-medium text-foreground hover:bg-muted rounded-xl transition-colors"
+                  className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
+                    isActive(link.href) && link.href !== "#reviews" && link.href !== "#about" && link.href !== "#contact"
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground hover:bg-muted"
+                  }`}
                 >
                   {link.name}
                 </a>
